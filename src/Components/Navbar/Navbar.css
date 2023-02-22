@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400&display=swap');
+
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Titillium Web', sans-serif;
+    
     
 }
 
@@ -17,21 +17,21 @@
 }
 
 header{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    padding: 0 2rem;
+    height: 75px;
+    margin: 20px 20px;
+    padding: 20px 20px;
     background-color: var(--mainColor);
     color: var(--textColor);
     
 }
 
-nav a{
-    margin: 0 2rem;
-    color: var(--textColor);
+
+
+.nav-links a{
     text-decoration: none;
+    color:var(--textColor);
 }
+
 
 nav a:hover{
     color: var(--secondaryColor);
@@ -47,13 +47,19 @@ header .nav-btn{
     color: var(--textColor);
     visibility: hidden;
     opacity: 0;
-    font-size: 1.8rem;
+    font-size: 30px;
 }
+
+
 
 @media only screen and (max-width: 1024px){
     header .nav-btn{
         visibility: visible;
         opacity: 1;
+        position:absolute;
+        top: 2rem;
+        right: 2rem;
+        
     }
 
     header nav{
@@ -70,8 +76,33 @@ header .nav-btn{
         background-color: var(--mainColor);
         transition: 1s;
         transform: translateY(-100vh);
+        
 
     }
+    .nav-links a{
+        display:flex;
+        float: inline-end;
+    }
+
+    .home,
+    .myjournal,
+    .todolist,
+    .financetracker,
+    .signin,
+    .signup{
+        text-decoration: none;
+        color:var(--textColor);
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        margin-left: 1rem;
+
+        
+        
+    }
+
+
 
     header .responsive_nav{
         transform: none;
@@ -79,6 +110,7 @@ header .nav-btn{
 
     nav .nav-close-btn{
         position: absolute;
+        visibility: visible;
         top: 2rem;
         right: 2rem;
 
@@ -86,5 +118,7 @@ header .nav-btn{
 
     nav a{
         font-size: 1.5 rem;
+        list-style: none;
     }
+    
 }
