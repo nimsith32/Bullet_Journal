@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Components/Home";
-import Myjournal from "./Components/Myjournal";
-import Todolist from "./Components/Todolist";
+import Myjournal from "./Components/MyJournal";
+import Todolist from "./Components/TodoList";
 import Signin from "./Components/Login/SignIn";
 import Signup from "./Components/Login/Signup";
 
