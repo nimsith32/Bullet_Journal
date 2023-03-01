@@ -5,6 +5,7 @@ import Myjournal from "./Components/MyJournal";
 import Todolist from "./Components/TodoList";
 import Signin from "./Components/Login/SignIn";
 import Signup from "./Components/Login/Signup";
+import Financetracker from "./Components/Financetracker";
 
 import Navbar from "./Components/Navbar/Navbar";
 function App() {
@@ -12,11 +13,14 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/" component={Home} exact>
+          <Route path="/home" component={Home} exact>
             <Home />
           </Route>
           <Route path="/myjournal" component={Myjournal} exact>
             <Myjournal />
+          </Route>
+          <Route path="/Financetracker" component={Financetracker} exact>
+            <Financetracker />
           </Route>
           <Route path="/todolist" component={Todolist} exact>
             <Todolist />

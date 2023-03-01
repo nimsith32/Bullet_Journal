@@ -1,9 +1,8 @@
 import React from 'react'
 
-function financialTracker(){
+function Financetracker(){
   return (
     <div>financialTracker</div>
-  );
-};
-
-export default financialTracker
+  )
+}
+export default Financetracker

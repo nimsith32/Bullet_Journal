@@ -1,81 +1,46 @@
-import React, {useState} from 'react'
-import { useRef } from 'react';
-import {FaBars, FaTimes} from "react-icons/fa";
-import { Link } from "react-router-dom";
-//import "./Navbar.css";
-import { Navbar as NavBar } from 'flowbite-react';
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { Squash as Hamburger } from 'hamburger-react'
+import './Navbar.css'
 
-function Navbar() {
-  const navRef = useRef();
-  const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav");
+const Navbar = () => {
+  const [showNavbar, setShowNavbar] = useState(false)
+
+  const handleShowNavbar = () => {
+    setShowNavbar(!showNavbar)
   }
 
   return (
-      <header>
-        <NavBar
-  fluid={true}
-  rounded={true}
->
-  <NavBar.Brand
-   
-    to="/navbars"
-  >
-    <img
-      src="https://flowbite.com/docs/images/logo.svg"
-      className="mr-3 h-6 sm:h-9"
-      alt="Flowbite Logo"
-    />
-    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-      Flowbite
-    </span>
-  </NavBar.Brand>
-  <NavBar.Toggle />
-  <NavBar.Collapse>
-    <NavBar.Link
-      href="/navbars"
-      active={true}
-    >
-      Home
-    </NavBar.Link>
-    <NavBar.Link
-    
-      to="/navbars"
-    >
-      About
-    </NavBar.Link>
-    <NavBar.Link href="/navbars">
-      Services
-    </NavBar.Link>
-    <NavBar.Link href="/navbars">
-      Pricing
-    </NavBar.Link>
-    <NavBar.Link href="/navbars">
-      Contact
-    </NavBar.Link>
-  </NavBar.Collapse>
-</NavBar>
-        {/* <nav ref= {navRef}> 
-          <div className='nav-links'>
-            <div className='logo'>
-              <h1><a href='/' className='home'>LOGO</a></h1>
-            </div>
-            <a href="/myjournal" className='myjournal'>My Journal</a>
-            <a href="/todolist" className='todolist'>ToDo List</a>
-            <a href="/financetracker" className='financetracker'>Finance Tracker</a>
-            <a href="/signin" className='signin'>SignIn</a>
-            <a href="/signup" className='signup'>SignUp</a>
-          </div>
-            <button className='nav-btn nav-close-btn' onClick={showNavbar}>
-                <FaTimes/>
-            </button>
-        </nav>
-        <button className='nav-btn' onClick={showNavbar}>
-                <FaBars/>
-        </button> */}
-      </header>
-    
-  );
-};
+    <nav className="navbar">
+      <div className="container">
+        <div className="logo">
+          <img src='../../Assets/icons/logo.png'></img>
+        </div>
+        <div className="menu-icon" onClick={handleShowNavbar}>
+          <Hamburger />
+        </div>
+        <div className={`nav-elements  ${showNavbar && 'active'}`}>
+          <ul>
+            <li>
+              <NavLink to="/Home">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/MyJournal">My Journal</NavLink>
+            </li>
+            <li>
+              <NavLink to="/Todolist">Todo List</NavLink>
+            </li>
+            <li className='sign'>
+              <NavLink to="/Signin">SignIn</NavLink>
+            </li>
+            <li className='sign'>
+              <NavLink to="/Signup">Register</NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  )
+}
 
 export default Navbar
