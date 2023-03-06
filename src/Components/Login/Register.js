@@ -1,6 +1,8 @@
 import React, { useState} from "react";
 import Axios from 'axios';
 import './Register.css';
+import './Validation';
+import Validation from "./Validation";
 
 
 export default function (props) {
@@ -13,6 +15,13 @@ export default function (props) {
   const [user_name, setFullName] = useState("");
   const [user_email, setEmailAddress] = useState("");
   const [user_password, setPassword] = useState(""); 
+
+  const [errors, setErrors] = useState({});
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setErrors(Validation(values));
+  }
 
   const register = () => {
     Axios.post("http://localhost:3001/register", {
@@ -74,7 +83,7 @@ export default function (props) {
 
     return (
       <div className="Auth-form-container">
-        <form className="Auth-form">
+        <form className="Auth-form" onSubmit={handleSubmit}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign Up</h3>
 
@@ -95,6 +104,7 @@ export default function (props) {
                   setFullName(e.target.value);
                 }}
               />
+              {errors.user_name && <p style={{color:"red"}}> {errors.user_name}</p>}
             </div>
 
             <div className="form-group mt-3">
@@ -117,7 +127,7 @@ export default function (props) {
                 placeholder="Password"
                 onChange={(e) => {
                   setPassword(e.target.value);
-                }}
+                }}  
               />
             </div>
 
