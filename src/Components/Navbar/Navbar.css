@@ -3,14 +3,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   background-color: #fcfcfc;
+
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,12 +19,13 @@ body {
 
 .navbar {
   height: 60px;
-  background-color: #fcfcfc;
+  background-color: black;
   position: relative;
 }
 
 .menu-icon {
   display: none;
+  color: #fcfcfc;
 }
 
 
@@ -41,16 +42,17 @@ body {
 .nav-elements ul a {
   font-size: 16px;
   font-weight: 400;
-  color: #2f234f;
+  color: white;
   text-decoration: none;
 }
 
 .sign {
-    border: 3px outset black;
-    background-color: #cfc7c7;
+    border: 1px solid black;
+    margin-top: auto;
+    
 }
 .nav-elements ul a.active {
-  color: #574c4c;
+  color: #fdcfcf;
   font-weight: 500;
   position: relative;
 }
@@ -75,13 +77,15 @@ body {
   .menu-icon {
     display: block;
     cursor: pointer;
+
   }
+
 
   .nav-elements {
     position: absolute;
     right: 0;
     top: 60px;
-    background-color: white;
+    background-color: black;
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;
@@ -89,8 +93,10 @@ body {
   }
 
   .nav-elements.active {
-    width: 270px;
+    width: 170px;
+    height: 250px;
   }
+
 
   .nav-elements ul {
     display: flex;
