@@ -4,7 +4,7 @@ const List = ({todos, setTodos}) => {
   return (
     <div>
         {todos.map((todo) => (
-            <li className='todo-list' key ={todo.id}>
+            <li className='todo-item' key ={todo.id}>
                 <input 
                  type="text" 
                  value={todo.title} 

@@ -1,5 +1,5 @@
 import './MyJournal.css';
-import { store, persistor } from './redux/store'
+import { store, persistor } from './redux/Store'
 import { Provider } from "react-redux"
 import { PersistGate } from 'redux-persist/integration/react'
 import Main from "./containers/Main"
