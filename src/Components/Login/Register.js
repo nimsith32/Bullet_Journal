@@ -1,8 +1,7 @@
-import React, { useState} from "react";
+import React, { Component, useEffect, useState} from "react";
 import Axios from 'axios';
 import './Register.css';
-import './Validation';
-import Validation from "./Validation";
+
 
 
 export default function (props) {
@@ -18,11 +17,6 @@ export default function (props) {
 
   const [errors, setErrors] = useState({});
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setErrors(Validation(values));
-  }
-
   const register = () => {
     Axios.post("http://localhost:3001/register", {
       user_name: user_name, 
@@ -32,6 +26,9 @@ export default function (props) {
         console.log("Successfully Registered");
       });
   };
+  
+
+
 
   if (authMode === "signin") {
     return (
@@ -66,10 +63,13 @@ export default function (props) {
             </div>
             
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-outline-primary">
-                Submit
+              <button type="submit" className="btn btn-outline-primary" >
+                Sign In
               </button>
             </div>
+        
+
+
 
             <p className="text-center mt-2">
                <a href="#">Forgot Password?</a>
@@ -83,7 +83,7 @@ export default function (props) {
 
     return (
       <div className="Auth-form-container">
-        <form className="Auth-form" onSubmit={handleSubmit}>
+        <form className="Auth-form">
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign Up</h3>
 
@@ -104,7 +104,6 @@ export default function (props) {
                   setFullName(e.target.value);
                 }}
               />
-              {errors.user_name && <p style={{color:"red"}}> {errors.user_name}</p>}
             </div>
 
             <div className="form-group mt-3">

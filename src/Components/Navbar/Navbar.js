@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
 import logo from "../../Assets/logo.png"
 import './Navbar.css'
+import { UserContext } from '../UserContext';
+
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false)
@@ -11,14 +13,7 @@ const Navbar = () => {
     setShowNavbar(!showNavbar)
   }
 
-  useEffect(() => { 
-    let handler = () =>{
-      setShowNavbar(false);
-    };
-
-    document.addEventListener("mousedown", handler);
-  });
-
+ 
   return (
     <nav className="navbar">
       <div className="container">
@@ -45,6 +40,7 @@ const Navbar = () => {
             <li className='sign'>
               <NavLink to="/Register" >Get Started</NavLink>
             </li>
+
           </ul>
         </div>
       </div>
