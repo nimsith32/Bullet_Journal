@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Components/Home";
+import Home from "./Components/home/Home";
 import Myjournal from "./Components/MyJournal";
 import Todolist from "./Components/TodoList/TodoList";
 import Register from "./Components/Login/Register";
@@ -32,5 +32,25 @@ function App() {
       </Router>
   );
 }
+const Collapse = ({ collapsed, children }) => {
+  const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
+
+  return (
+    <>
+      <button
+        className="collapse-button"
+        onClick={() => setIsCollapsed(!isCollapsed)}
+      >
+        {isCollapsed ? 'Show' : 'Hide'} content
+      </button>
+      <div
+        className={`collapse-content ${isCollapsed ? 'collapsed' : 'expanded'}`}
+        aria-expanded={isCollapsed}
+      >
+        {children}
+      </div>
+    </>
+  );
+};
 
 export default App;

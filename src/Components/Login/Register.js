@@ -18,10 +18,7 @@ export default function (props) {
 
   const [errors, setErrors] = useState({});
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setErrors(Validation(values));
-  }
+
 
   const register = () => {
     Axios.post("http://localhost:3001/register", {
@@ -83,7 +80,7 @@ export default function (props) {
 
     return (
       <div className="Auth-form-container">
-        <form className="Auth-form" onSubmit={handleSubmit}>
+        <form className="Auth-form">
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign Up</h3>
 
