@@ -1,0 +1,43 @@
+.app-list-item
+  font-size: 1.25rem
+  button
+    width: 35px
+    height: 35px
+    margin: 3px
+    font-size: 17px
+    border: none
+    cursor: pointer
+    background: none
+    &:focus
+      box-shadow: none
+      outline: none
+  .bi-star-fill
+    color: #ffd700
+  .bi-trash
+    color: red
+  .bi-heart-fill
+    width: 35px
+    height: 35px
+    text-align: center
+    line-height: 35px
+    font-size: 16px
+    color: red
+    transition: 0.3s all
+    transform: translateX(30px)
+    opacity: 0
+  &.liked
+    .bi-heart-fill
+      opacity: 1
+      transform: translateX(0)
+  &.important
+    .app-list-item-label
+      color: #ffd700
+    .bi-star-fill
+      color: #aeaeae
+
+.app-list-item-label
+  display: block
+  line-height: 35px
+  cursor: pointer
+  user-select: none
+  transition: 0.5s all
