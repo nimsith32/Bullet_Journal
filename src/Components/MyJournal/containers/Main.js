@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import DiaryForm from "../components/DiaryForm";
-import { addItem, deleteItem } from "../redux/actions";
-import DiaryItem from "../components/DiaryItem";
+import DiaryForm from "../JournalForm";
+import { addItem, deleteItem } from "../redux/Actions";
+import DiaryItem from "../JournalItem";
 import { Modal } from "react-bootstrap";
 
 export class Main extends Component {
@@ -20,7 +20,6 @@ export class Main extends Component {
       <div>
         <div className="grid-container">
           <div className="diary-app">
-            <h1>Dear Diary...</h1>
             <DiaryForm addItem={(item) => addItem(item)} />
           </div>
           <div className="diary-app" style={{ paddingTop: 20 }}>

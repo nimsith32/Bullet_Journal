@@ -1,11 +1,12 @@
 import React, {useState, useMemo} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Components/home/Home";
+import Home from "./Components/Home";
 import Myjournal from "./Components/MyJournal";
 import Todolist from "./Components/TodoList/TodoList";
 import Register from "./Components/Login/Register";
 import FinancialGoals from "./Components/FinancialGoals";
 import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 import { UserContext } from "./Components/UserContext";
 
 
@@ -17,6 +18,7 @@ function App() {
   return(
       <Router>
         <Navbar />
+
         <Switch>
           <UserContext.Provider value={value} >
             <Route path="/home" component={Home} exact>

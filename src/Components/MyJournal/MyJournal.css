@@ -2,8 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-      'Lucida Sans', Arial, sans-serif
   }
   
   body {
@@ -14,6 +12,9 @@
   .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
   }
   
   .diary-app {
@@ -36,9 +37,6 @@
     font-size: 33px;
   }
   
-  .complete {
-    text-decoration: line-through;
-  }
   
   .diary-form {
     margin-bottom: 32px;
@@ -87,18 +85,12 @@
     cursor: pointer;
     outline: none;
     background: black;
-    color: white;
+    color: black;
     text-transform: capitalize;
     float: left;
     margin-left: 30px;
   }
-  
-  .diary-container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-  }
-  
+
   .diary-row {
     display: flex;
     justify-content: space-between;
