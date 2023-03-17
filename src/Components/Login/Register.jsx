@@ -17,6 +17,8 @@ export default function (props) {
 
   const [errors, setErrors] = useState({});
 
+
+
   const register = () => {
     Axios.post("http://localhost:3001/register", {
       user_name: user_name, 
