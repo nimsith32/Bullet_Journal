@@ -1,6 +1,6 @@
 import React, {useState, useMemo} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Components/Home";
+import Home from "./Components/Home/Home";
 import Myjournal from "./Components/MyJournal/MyJournal";
 import Todolist from "./Components/TodoList/TodoList";
 import Register from "./Components/Login/Register";
