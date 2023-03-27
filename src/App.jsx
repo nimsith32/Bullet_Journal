@@ -4,11 +4,27 @@ import Home from "./Components/Home/Home";
 import Myjournal from "./Components/MyJournal/MyJournal";
 import Todolist from "./Components/TodoList/TodoList";
 import Register from "./Components/Login/Register";
-import FinancialGoals from "./Components/FinancialGoals";
+import FinancialGoals from "./Components/FinancialTracker/FinancialTracker";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import { UserContext } from "./Components/UserContext";
+import Challenge from "./Components/FinancialTracker/Challenge";
+import MonthlyBudget from "./Components/FinancialTracker/MonthlyBudget";
+import TodoCalendar from "./Components/Calender/TodoCalendar";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import "react-datepicker/dist/react-datepicker.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import "./index.css";
+import 'flowbite';
 
 function App() {
 
@@ -32,6 +48,15 @@ function App() {
             </Route>
             <Route path="/financialGoals" component={FinancialGoals} exact>
               <FinancialGoals />
+            </Route>
+            <Route path="/Challenge" component={Challenge} exact>
+              <Challenge />
+            </Route>
+            <Route path="/MonthlyBudget" component={MonthlyBudget} exact>
+              <MonthlyBudget />
+            </Route>
+            <Route path="/TodoCalendar" component={TodoCalendar} exact>
+              <TodoCalendar />
             </Route>
             <Route path="/register" component={Register} exact>
               <Register />

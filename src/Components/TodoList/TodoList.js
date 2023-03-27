@@ -43,14 +43,16 @@ function TodoList() {
 
   return (
     <>
-      <p className='p1'>What's the Plan for Today?</p>
-      <TodoForm onSubmit={addTodo} />
-      <Todo
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}
-      />
+      <div className='todo-app'>
+      <h1 className='header'>TodoList</h1>
+        <TodoForm onSubmit={addTodo} />
+        <Todo
+          todos={todos}
+          completeTodo={completeTodo}
+          removeTodo={removeTodo}
+        />
+      </div>
+      
     </>
   );
 }

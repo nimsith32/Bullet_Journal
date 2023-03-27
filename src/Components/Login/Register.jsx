@@ -1,7 +1,7 @@
-import React, { Component, useEffect, useState} from "react";
+import React, { Component, useEffect, useState, useRecoilState} from "react";
 import Axios from 'axios';
 import './Register.css';
-
+import { userEmail, userName, userPassword } from "../../State";
 
 
 export default function (props) {
@@ -11,9 +11,9 @@ export default function (props) {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
   }
 
-  const [user_name, setFullName] = useState("");
-  const [user_email, setEmailAddress] = useState("");
-  const [user_password, setPassword] = useState(""); 
+  const [user_name, setFullName] = useState(userName);
+  const [user_email, setEmailAddress] = useState(userEmail);
+  const [user_password, setPassword] = useState(userPassword); 
 
   const [errors, setErrors] = useState({});
 

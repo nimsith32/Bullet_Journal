@@ -35,13 +35,14 @@ const Navbar = () => {
               <NavLink to="/Todolist">Todo List</NavLink>
             </li>
             <li>
+              <NavLink to="/TodoCalendar">Calendar</NavLink>
+            </li>
+            <li>
               <NavLink to="/FinancialGoals">Financial Goals</NavLink>
             </li>
             <li className='sign'>
               <NavLink to="/Register" >Get Started</NavLink>
             </li>
-
-
           </ul>
         </div>
       </div>
