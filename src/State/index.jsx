@@ -18,11 +18,24 @@ const { persistAtom } = recoilPersist()
           allDay : true,
           start : new Date(2023,2,21),
           end : new Date(2023,2,24),
-          cat: "red"
+          cat: "payment"
         }
       ],
       effects_UNSTABLE: [persistAtom],
-  })
+  });
+
+  export const budgetAtom = atom({
+    key: "budget",
+    default: [
+        {
+          title : "Pay",
+          amount : 2000,
+          month : "January",
+          type: "Income"
+        }
+      ],
+      effects_UNSTABLE: [persistAtom],
+  });
 
   export const journalAtom = atom({
     key: "journal",

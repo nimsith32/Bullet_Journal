@@ -8,7 +8,7 @@ import FinancialGoals from "./Components/FinancialTracker/FinancialTracker";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import { UserContext } from "./Components/UserContext";
-import Challenge from "./Components/FinancialTracker/Challenge";
+import Challenge from "./Components/FinancialTracker/LineChart";
 import MonthlyBudget from "./Components/FinancialTracker/MonthlyBudget";
 import TodoCalendar from "./Components/Calender/TodoCalendar";
 import {
@@ -32,7 +32,8 @@ function App() {
 
   const value = useMemo(() => ({user, setUser}), [user, setUser]);
   return(
-      <Router>
+    <div className="w-full h-full min-h-screen">
+        <Router>
         <Navbar />
 
         <Switch>
@@ -64,6 +65,8 @@ function App() {
           </UserContext.Provider>
         </Switch>
       </Router>
+    </div>
+    
   );
 }
 const Collapse = ({ collapsed, children }) => {

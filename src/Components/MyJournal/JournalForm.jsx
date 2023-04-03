@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default function DiaryForm({ addItem }) {
     const [title, setTitle] = useState("")
@@ -25,10 +27,10 @@ export default function DiaryForm({ addItem }) {
                     <input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Add an Item" className="diary-input"/>
                     <input value={date} onChange={(event) => setDate(event.target.value)} type="date" className="diary-date-input"/>
                 </div>
-                <textarea value={text} onChange={(event) => setText(event.target.value)} rows="2" className="diary-textarea">
-                </textarea>
+                <ReactQuill theme="snow" value={text} onChange={(event) => setText(event.target.value)} rows="2" className="diary-textarea"/>
                 <button type="submit" className="diary-button">Add Item To Diary</button>
             </form>
+
         </div>
     )
 }

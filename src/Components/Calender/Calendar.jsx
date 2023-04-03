@@ -40,11 +40,8 @@ export function Calendar() {
           category = "cat"
           className='calendar'
           eventPropGetter={(allEvents) => {
-            const backgroundcolor = allEvents.cat ? allEvents.cat : 'red' ;
-            const color = allEvents.color ? allEvents.color : 'red';
-            return { 
-              style: {backgroundcolor, color}
-            }
+            const backgroundColor = allEvents.cat === "payment" ? 'green' : allEvents.cat === "important" ? 'red' : 'blue';
+            return { style: {backgroundColor}}
           }}/>
       </div>
 )} 

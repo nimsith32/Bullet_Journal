@@ -4,6 +4,7 @@ import Journal from '../MyJournal/JournalItem';
 import { Calendar } from '../Calender/Calendar';
 import { useRecoilValue } from 'recoil';
 import { journalAtom } from "../../State"
+import PieChart from "../FinancialTracker/LineChart"
 
 const togglecollapse = () =>{
   
@@ -68,7 +69,7 @@ function Home(){
         <Journal items={items} />
       </React.Fragment>
       )}
-      <p></p>
+      <PieChart />
       <Calendar />
 
       <p className='bold'> 

@@ -39,7 +39,7 @@ const schema = Yup.object({
   title: Yup.string().required(),
   start: Yup.string().required(),
   end: Yup.string().required(),
-  cat: Yup.string().required()
+  cat: Yup.string().required("Category Is Required")
 })
 
 
@@ -73,11 +73,8 @@ export function TodoCalendar() {
           endAccessor="end"
           className='calendar'
           eventPropGetter={(allEvents) => {
-            const backgroundcolor = allEvents.cat ? allEvents.cat : 'red' ;
-            const color = allEvents.color ? allEvents.color : 'gold';
-            return { 
-              style: {backgroundcolor, color}
-            }
+            const backgroundColor = allEvents.cat === "payment" ? "green":  allEvents.cat === "important"?  'red' : "blue";
+            return { style: {backgroundColor}}
           }}/>
       </div>
       
@@ -93,6 +90,7 @@ export function TodoCalendar() {
           
           onSubmit={(data) => {
             setAllEvents([...allEvents, data])
+            console.log(allEvents)
           }}>
             
           <Form className='input-group has-validation' style={{display: "flex",flexDirection: "column",gap: "0.5rem"}}>
@@ -104,9 +102,9 @@ export function TodoCalendar() {
             <ErrorMessage name="end" component="span"  className='error'/>
             <Field name="cat" as="select" placeholder='Category' >
               <option value="" label='Select a Category'></option>
-              <option value="red">Red</option>
-              <option value="green">Green</option>
-              <option value="blue">Blue</option>
+              <option value="payment">Payment</option>
+              <option value="important">Important</option>
+              <option value="other">Other</option>
             </Field>
             <ErrorMessage name="cat" component="span"  className='error'/>
             <button type='reset' className="btn btn-outline-primary">
