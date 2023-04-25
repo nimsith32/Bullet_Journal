@@ -59,13 +59,12 @@ export function TodoCalendar() {
 
   useEffect(() => {
     console.log(allEvents)
-  }, [allEvents])
+  }, [])
 
 
   return (
     <div>
       <div>
-        <h1>Calendar</h1>
         <Calendar
           localizer={localizer}
           events={allEvents}

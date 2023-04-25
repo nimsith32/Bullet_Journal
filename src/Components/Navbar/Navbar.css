@@ -41,7 +41,8 @@
 }
 
 .nav-elements ul a {
-  font-size: 16px;
+  padding: 15px;
+  font-size: 20px;
   font-weight: 400;
   color: white;
   text-decoration: none;

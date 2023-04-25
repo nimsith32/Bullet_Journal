@@ -3,7 +3,7 @@ import TodoForm from './TodoForm';
 import Todo from './Todo';
 import './TodoList.css'
 
-function TodoList() {
+export function TodoList() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = todo => {

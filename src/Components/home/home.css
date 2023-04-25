@@ -1,13 +1,4 @@
-
-.collapsed{
-    display: none;
-}
-.collapseheader{
-    font-weight: bold;
-    background-color: darkgray;
-}
-.reminders{
-    background-color: black;
-    color: white;
-    width:max-content;
+.home-calendar{
+    float:right;
+    width:60%;
 }

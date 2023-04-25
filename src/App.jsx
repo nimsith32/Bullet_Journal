@@ -4,12 +4,10 @@ import Home from "./Components/Home/Home";
 import Myjournal from "./Components/MyJournal/MyJournal";
 import Todolist from "./Components/TodoList/TodoList";
 import Register from "./Components/Login/Register";
-import FinancialGoals from "./Components/FinancialTracker/FinancialTracker";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import { UserContext } from "./Components/UserContext";
-import Challenge from "./Components/FinancialTracker/LineChart";
-import MonthlyBudget from "./Components/FinancialTracker/MonthlyBudget";
+import FinancialTracker from "./Components/FinancialTracker/FinancialTracker";
 import TodoCalendar from "./Components/Calender/TodoCalendar";
 import {
   RecoilRoot,
@@ -35,7 +33,7 @@ function App() {
     <div className="w-full h-full min-h-screen">
         <Router>
         <Navbar />
-
+        
         <Switch>
           <UserContext.Provider value={value} >
             <Route path="/home" component={Home} exact>
@@ -47,14 +45,8 @@ function App() {
             <Route path="/todolist" component={Todolist} exact>
               <Todolist />
             </Route>
-            <Route path="/financialGoals" component={FinancialGoals} exact>
-              <FinancialGoals />
-            </Route>
-            <Route path="/Challenge" component={Challenge} exact>
-              <Challenge />
-            </Route>
-            <Route path="/MonthlyBudget" component={MonthlyBudget} exact>
-              <MonthlyBudget />
+            <Route path="/FinancialTracker" component={FinancialTracker} exact>
+              <FinancialTracker />
             </Route>
             <Route path="/TodoCalendar" component={TodoCalendar} exact>
               <TodoCalendar />
@@ -65,29 +57,13 @@ function App() {
           </UserContext.Provider>
         </Switch>
       </Router>
+
+      
+    
+
+
     </div>
     
   );
 }
-const Collapse = ({ collapsed, children }) => {
-  const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
-
-  return (
-    <>
-      <button
-        className="collapse-button"
-        onClick={() => setIsCollapsed(!isCollapsed)}
-      >
-        {isCollapsed ? 'Show' : 'Hide'} content
-      </button>
-      <div
-        className={`collapse-content ${isCollapsed ? 'collapsed' : 'expanded'}`}
-        aria-expanded={isCollapsed}
-      >
-        {children}
-      </div>
-    </>
-  );
-};
-
 export default App;

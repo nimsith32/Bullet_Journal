@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export default function DiaryForm({ addItem }) {
     const [title, setTitle] = useState("")
@@ -21,16 +22,25 @@ export default function DiaryForm({ addItem }) {
     }
 
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <div className="diary-form">
-                    <input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Add an Item" className="diary-input"/>
-                    <input value={date} onChange={(event) => setDate(event.target.value)} type="date" className="diary-date-input"/>
-                </div>
-                <ReactQuill theme="snow" value={text} onChange={(event) => setText(event.target.value)} rows="2" className="diary-textarea"/>
-                <button type="submit" className="diary-button">Add Item To Diary</button>
-            </form>
-
+        <div className='m-4 p-4 w-full h-full'>
+            <Formik> 
+                <Form onSubmit={onSubmit} className='input-group has-validation' style={{display: "flex",flexDirection: "column",gap: "0.5rem"}}>
+                    <Field name="title" type="text" value={title} onChange={(event) => setTitle(event.target.value)} placeholder='Add Title' className='w-full' />
+                    <ErrorMessage name='title' component="span" className='error'/>
+                    <Field name="date" value={date} onChange={(event) => setDate(event.target.value)} type="date"/>
+                    <ErrorMessage name="date" component="span"  className='error'/>
+                    
+                    <Field name="entry" type="textarea" placeholder='TextArea' value={text} onChange={(event) => setText(event.target.value)} rows="2" />
+                    <ErrorMessage name="entry" component="span"  className='error'/>
+                    <button type='reset' className="btn btn-outline-primary">
+                    Reset 
+                    </button>
+                    <button type='submit' className="btn btn-primary">
+                    Add Event
+                    </button>
+                </Form>
+            </Formik>
         </div>
+        
     )
 }
