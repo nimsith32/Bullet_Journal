@@ -1,0 +1,43 @@
+
+
+.calendar {
+    float: right;
+    width: 65%;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+    height: 600px;
+    margin: 50px;
+    padding-bottom: 50px 50px;
+}
+
+.addEvent {
+    width: 25%;
+    padding: 25px 25px;
+    box-sizing: border-box;
+    padding-top: 50px;
+
+
+}
+
+h1{
+    
+    display: flex;
+    float: center;
+    justify-content: center;
+    padding-top: 20px;
+
+}
+
+.opt {
+    background: #ffffff;
+    color: #ff0000;
+  }
+  
+  .select .opt:checked,
+  .select .opt:focus {
+    background: linear-gradient(#ff0000, #ff0000);
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+  }

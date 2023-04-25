@@ -4,11 +4,25 @@ import Home from "./Components/Home/Home";
 import Myjournal from "./Components/MyJournal/MyJournal";
 import Todolist from "./Components/TodoList/TodoList";
 import Register from "./Components/Login/Register";
-import FinancialGoals from "./Components/FinancialGoals";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import { UserContext } from "./Components/UserContext";
+import FinancialTracker from "./Components/FinancialTracker/FinancialTracker";
+import TodoCalendar from "./Components/Calender/TodoCalendar";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import "react-datepicker/dist/react-datepicker.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import "./index.css";
+import 'flowbite';
 
 function App() {
 
@@ -16,9 +30,10 @@ function App() {
 
   const value = useMemo(() => ({user, setUser}), [user, setUser]);
   return(
-      <Router>
+    <div className="w-full h-full min-h-screen">
+        <Router>
         <Navbar />
-
+        
         <Switch>
           <UserContext.Provider value={value} >
             <Route path="/home" component={Home} exact>
@@ -30,8 +45,11 @@ function App() {
             <Route path="/todolist" component={Todolist} exact>
               <Todolist />
             </Route>
-            <Route path="/financialGoals" component={FinancialGoals} exact>
-              <FinancialGoals />
+            <Route path="/FinancialTracker" component={FinancialTracker} exact>
+              <FinancialTracker />
+            </Route>
+            <Route path="/TodoCalendar" component={TodoCalendar} exact>
+              <TodoCalendar />
             </Route>
             <Route path="/register" component={Register} exact>
               <Register />
@@ -39,27 +57,13 @@ function App() {
           </UserContext.Provider>
         </Switch>
       </Router>
+
+      
+    
+
+
+    </div>
+    
   );
 }
-const Collapse = ({ collapsed, children }) => {
-  const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
-
-  return (
-    <>
-      <button
-        className="collapse-button"
-        onClick={() => setIsCollapsed(!isCollapsed)}
-      >
-        {isCollapsed ? 'Show' : 'Hide'} content
-      </button>
-      <div
-        className={`collapse-content ${isCollapsed ? 'collapsed' : 'expanded'}`}
-        aria-expanded={isCollapsed}
-      >
-        {children}
-      </div>
-    </>
-  );
-};
-
 export default App;

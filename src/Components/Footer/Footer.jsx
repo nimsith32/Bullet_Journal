@@ -2,101 +2,26 @@ import React from 'react'
 
 const Footer = () =>{
   return (
-            <Footer bgDark={true}>
-                <div className="w-full">
-                    <div className="grid w-full grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
-                    <div>
-                        <Footer.Title title="Company" />
-                        <Footer.LinkGroup col={true}>
-                        <Footer.Link href="#">
-                            About
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Careers
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Brand Center
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Blog
-                        </Footer.Link>
-                        </Footer.LinkGroup>
-                    </div>
-                    <div>
-                        <Footer.Title title="help center" />
-                        <Footer.LinkGroup col={true}>
-                        <Footer.Link href="#">
-                            Discord Server
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Twitter
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Facebook
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Contact Us
-                        </Footer.Link>
-                        </Footer.LinkGroup>
-                    </div>
-                    <div>
-                        <Footer.Title title="legal" />
-                        <Footer.LinkGroup col={true}>
-                        <Footer.Link href="#">
-                            Privacy Policy
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Licensing
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Terms & Conditions
-                        </Footer.Link>
-                        </Footer.LinkGroup>
-                    </div>
-                    <div>
-                        <Footer.Title title="download" />
-                        <Footer.LinkGroup col={true}>
-                        <Footer.Link href="#">
-                            iOS
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Android
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            Windows
-                        </Footer.Link>
-                        <Footer.Link href="#">
-                            MacOS
-                        </Footer.Link>
-                        </Footer.LinkGroup>
-                    </div>
-                    </div>
-                    <div className="w-full bg-gray-700 py-6 px-4 sm:flex sm:items-center sm:justify-between">
-                    <Footer.Copyright
-                        href="#"
-                        by="Flowbite™"
-                        year={2022}
-                    />
-                    <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-                        <Footer.Icon
-                        href="#"
-                        />
-                        <Footer.Icon
-                        href="#"
-                        />
-                        <Footer.Icon
-                        href="#"
-                        />
-                        <Footer.Icon
-                        href="#"
-                        />
-                        <Footer.Icon
-                        href="#"
-                        />
-                    </div>
-                    </div>
-                </div>
-            </Footer>
+    <footer className="bg-white rounded-lg shadow m-4 h-0 dark:bg-gray-800">
+        <div className="bg-white w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+        <span className=" text-sm text-black sm:text-center">© 2023 <a href="https://flowbite.com/" class="hover:underline">BulletJournal™</a>. All Rights Reserved.
+        </span>
+        <ul className=" flex flex-wrap items-center mt-1 text-sm font-medium text-black sm:mt-0">
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+            </li>
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
+        </div>
+    </footer>
   )
 }
 

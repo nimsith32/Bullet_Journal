@@ -1,5 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+  background-color: #fcfcfc;
 
+}
+
+.rbc-calendar {
+  min-height: 580px;
+}
+
+
+input {
+    display: block; 
+    padding: 0.625rem; 
+    background-color: #F9FAFB; 
+    color: #111827; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    width: 100%; 
+    border-radius: 0.5rem; 
+    border-width: 1px; 
+    border-color: #D1D5DB; 
+
+}
+
+.error {
+    margin-top: 0.5rem; 
+    color: #DC2626; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    text-transform: capitalize; 
+}

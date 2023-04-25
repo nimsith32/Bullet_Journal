@@ -1,33 +1,4 @@
-.welcometext{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
-}
-.signuptoday{
-    font-family:fantasy;
-    font-size: x-large;
-}
-.linktext{
-    color: darkorchid;
-}
-.bold{
-    font-family: sans-serif;
-    font-weight: bold;
-}
-.bottomtext{
-    font-family: sans-serif;
-    font-weight: bold;
-    position: fixed;
-    bottom: 2;
-}
-.collapsed{
-    display: none;
-}
-.collapseheader{
-    font-weight: bold;
-    background-color: darkgray;
-}
-.reminders{
-    background-color: black;
-    color: white;
-    width:max-content;
+.home-calendar{
+    float:right;
+    width:60%;
 }

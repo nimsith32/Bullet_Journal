@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
 import logo from "../../Assets/logo.png"
 import './Navbar.css'
-import { UserContext } from '../UserContext';
 
 
 const Navbar = () => {
@@ -18,7 +17,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-          <img src={logo} alt="react logo"></img>
+          <NavLink to="/Home" ><img src={logo} alt="react logo" /></NavLink>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
           <Hamburger />
@@ -26,7 +25,11 @@ const Navbar = () => {
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
             <li>
-              <NavLink to="/Home" >Home</NavLink>
+              <NavLink to="/FinancialTracker">FinancialTracker</NavLink>
+            </li>
+            <li>
+              <NavLink to="/TodoCalendar">Calendar</NavLink>
+
             </li>
             <li>
               <NavLink to="/MyJournal">My Journal</NavLink>
@@ -34,14 +37,9 @@ const Navbar = () => {
             <li>
               <NavLink to="/Todolist">Todo List</NavLink>
             </li>
-            <li>
-              <NavLink to="/FinancialGoals">Financial Goals</NavLink>
-            </li>
             <li className='sign'>
-              <NavLink to="/Register" >Get Started</NavLink>
+              <NavLink to="/Register" >Logout</NavLink>
             </li>
-
-
           </ul>
         </div>
       </div>
